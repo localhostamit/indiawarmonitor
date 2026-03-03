@@ -154,7 +154,16 @@ export class PanelLayoutManager implements AppModule {
                title="Good News ${t('common.currentVariant')}">
               <span class="variant-icon">☀️</span>
               <span class="variant-label">Good News</span>
-            </a>` : ''}`;
+            </a>` : ''}
+            ${SITE_VARIANT === 'india' ? `<span class="variant-divider"></span>
+            <a href="${vHref('india', 'https://india.worldmonitor.app')}"
+               class="variant-option active"
+               data-variant="india"
+               ${vTarget('india')}
+               title="Bharat Monitor ${t('common.currentVariant')}">
+              <span class="variant-icon">🇮🇳</span>
+              <span class="variant-label">Bharat</span>
+            </a>` : ''}` ;
       })()}</div>
           <span class="logo">MONITOR</span><span class="version">v${__APP_VERSION__}</span>${BETA_MODE ? '<span class="beta-badge">BETA</span>' : ''}
           <a href="https://x.com/eliehabib" target="_blank" rel="noopener" class="credit-link">
@@ -205,7 +214,7 @@ export class PanelLayoutManager implements AppModule {
         <div class="map-section" id="mapSection">
           <div class="panel-header">
             <div class="panel-header-left">
-              <span class="panel-title">${SITE_VARIANT === 'tech' ? t('panels.techMap') : SITE_VARIANT === 'happy' ? 'Good News Map' : t('panels.map')}</span>
+              <span class="panel-title">${SITE_VARIANT === 'tech' ? t('panels.techMap') : SITE_VARIANT === 'happy' ? 'Good News Map' : SITE_VARIANT === 'india' ? '🇮🇳 India Region Map' : t('panels.map')}</span>
             </div>
             <span class="header-clock" id="headerClock"></span>
             <div style="display:flex;align-items:center;gap:2px">

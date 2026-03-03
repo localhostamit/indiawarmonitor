@@ -70,6 +70,17 @@ const FULL_LIVE_CHANNELS: LiveChannel[] = [
   { id: 'aljazeera', name: 'AlJazeera', handle: '@AlJazeeraEnglish', fallbackVideoId: 'gCNeDWCI0vo', useFallbackOnly: true },
 ];
 
+// India variant: Indian news channels (24/7 live streams)
+const INDIA_LIVE_CHANNELS: LiveChannel[] = [
+  { id: 'ndtv', name: 'NDTV 24x7', handle: '@NDTV', fallbackVideoId: 'vMYe7FEBVek', useFallbackOnly: true },
+  { id: 'india-today', name: 'India Today', handle: '@indiatoday', fallbackVideoId: 'sYZtOFzM78M', useFallbackOnly: true },
+  { id: 'wion', name: 'WION', handle: '@WION', fallbackVideoId: 'JXbiqHW-Yoo', useFallbackOnly: true },
+  { id: 'abp-news', name: 'ABP News', handle: '@ABPNews', fallbackVideoId: 'cHPeM9y3GDQ', useFallbackOnly: true },
+  { id: 'cnbc', name: 'CNBC Markets', handle: '@CNBC', fallbackVideoId: '9NyxcX3rhQs' },
+  { id: 'bloomberg', name: 'Bloomberg', handle: '@markets', fallbackVideoId: 'iEpJwprxDdk' },
+  { id: 'aljazeera', name: 'Al Jazeera', handle: '@AlJazeeraEnglish', fallbackVideoId: 'gCNeDWCI0vo', useFallbackOnly: true },
+];
+
 // Tech variant: Tech & business channels
 const TECH_LIVE_CHANNELS: LiveChannel[] = [
   { id: 'bloomberg', name: 'Bloomberg', handle: '@markets', fallbackVideoId: 'iEpJwprxDdk' },
@@ -172,7 +183,7 @@ export const OPTIONAL_CHANNEL_REGIONS: { key: string; labelKey: string; channelI
   ..._REGION_ENTRIES,
 ];
 
-const DEFAULT_LIVE_CHANNELS = SITE_VARIANT === 'tech' ? TECH_LIVE_CHANNELS : SITE_VARIANT === 'happy' ? [] : FULL_LIVE_CHANNELS;
+const DEFAULT_LIVE_CHANNELS = SITE_VARIANT === 'tech' ? TECH_LIVE_CHANNELS : SITE_VARIANT === 'happy' ? [] : SITE_VARIANT === 'india' ? INDIA_LIVE_CHANNELS : FULL_LIVE_CHANNELS;
 
 /** Default channel list for the current variant (for restore in channel management). */
 export function getDefaultLiveChannels(): LiveChannel[] {
