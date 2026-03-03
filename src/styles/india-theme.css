@@ -1,0 +1,287 @@
+/* ============================================================
+   India Variant Theme — Bharat Monitor
+   Tricolor-inspired: Saffron, White & Green with Ashoka Blue.
+   Focused on India geopolitics, war impact, markets & leaders.
+   Unlayered CSS — wins over main.css which is wrapped in
+   @layer base by base-layer.css (@import ... layer(base)).
+   ============================================================ */
+
+/* ---------- India Dark Mode (default) ---------- */
+:root[data-variant="india"],
+:root[data-variant="india"][data-theme="dark"] {
+  /* Backgrounds — deep navy evoking Ashoka Chakra */
+  --bg: #080c18;
+  --bg-secondary: #0d1224;
+  --surface: #111828;
+  --surface-hover: #18203a;
+  --surface-active: #1e2944;
+
+  /* Borders */
+  --border: #1e2b48;
+  --border-strong: #2a3a5c;
+  --border-subtle: #141e34;
+
+  /* Text */
+  --text: #e8e4d8;
+  --text-secondary: #c8c2b0;
+  --text-dim: #8a8272;
+  --text-muted: #6a6254;
+  --text-faint: #4a4438;
+  --text-ghost: #3a342c;
+  --accent: #FF9933;
+
+  /* Overlays & shadows */
+  --overlay-subtle: rgba(255, 153, 51, 0.03);
+  --overlay-light: rgba(255, 153, 51, 0.06);
+  --overlay-medium: rgba(255, 153, 51, 0.10);
+  --overlay-heavy: rgba(255, 153, 51, 0.15);
+  --shadow-color: rgba(0, 0, 0, 0.6);
+  --darken-light: rgba(0, 0, 0, 0.06);
+  --darken-medium: rgba(0, 0, 0, 0.12);
+  --darken-heavy: rgba(0, 0, 0, 0.20);
+
+  /* Scrollbar */
+  --scrollbar-thumb: #2a3a5c;
+  --scrollbar-thumb-hover: #3a4e72;
+
+  /* Input */
+  --input-bg: #0d1224;
+
+  /* Panels */
+  --panel-bg: #111828;
+  --panel-border: #1e2b48;
+
+  /* Map */
+  --map-bg: #060a14;
+  --map-grid: #0a1220;
+  --map-country: #0d1e3a;
+  --map-stroke: #1a2a44;
+
+  /* Typography */
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Panel border radius */
+  --panel-radius: 6px;
+
+  /* India flag accent colors */
+  --india-saffron: #FF9933;
+  --india-white: #FFFFFF;
+  --india-green: #138808;
+  --india-blue: #000080;
+  --india-saffron-dim: rgba(255, 153, 51, 0.6);
+  --india-green-dim: rgba(19, 136, 8, 0.6);
+
+  /* Semantic colors */
+  --semantic-critical: #FF3333;
+  --semantic-high: #FF9933;
+  --semantic-elevated: #FFD700;
+  --semantic-normal: #138808;
+  --semantic-low: #4488FF;
+  --semantic-info: #88AAFF;
+  --semantic-positive: #138808;
+
+  /* Threat/severity */
+  --threat-critical: #FF3333;
+  --threat-high: #FF9933;
+  --threat-medium: #FFD700;
+  --threat-low: #138808;
+  --threat-info: #4488FF;
+
+  /* DEFCON levels */
+  --defcon-1: #FF3333;
+  --defcon-2: #FF9933;
+  --defcon-3: #FFD700;
+  --defcon-4: #138808;
+  --defcon-5: #4488FF;
+
+  /* Status */
+  --status-live: #FF9933;
+  --status-cached: #FFD700;
+  --status-unavailable: #FF3333;
+
+  /* Legacy aliases */
+  --red: #FF4444;
+  --green: #138808;
+  --yellow: #FF9933;
+  --primary: #FF9933;
+  --muted: #6a6254;
+}
+
+/* ---------- India Light Mode ---------- */
+:root[data-variant="india"][data-theme="light"] {
+  /* Backgrounds — warm cream like traditional Indian aesthetics */
+  --bg: #FFF8F0;
+  --bg-secondary: #FFF2E6;
+  --surface: #FFFFFF;
+  --surface-hover: #FFF2E6;
+  --surface-active: #FFE4C4;
+
+  /* Borders */
+  --border: #E8D5B8;
+  --border-strong: #D4B896;
+  --border-subtle: #F2E8D8;
+
+  /* Text */
+  --text: #1a1008;
+  --text-secondary: #3a2818;
+  --text-dim: #6a4828;
+  --text-muted: #8a6848;
+  --text-faint: #B89068;
+  --text-ghost: #D4B898;
+  --accent: #CC6600;
+
+  /* Overlays */
+  --overlay-subtle: rgba(204, 102, 0, 0.03);
+  --overlay-light: rgba(204, 102, 0, 0.06);
+  --overlay-medium: rgba(204, 102, 0, 0.10);
+  --overlay-heavy: rgba(204, 102, 0, 0.15);
+  --shadow-color: rgba(100, 60, 20, 0.12);
+  --darken-light: rgba(100, 60, 20, 0.06);
+  --darken-medium: rgba(100, 60, 20, 0.10);
+  --darken-heavy: rgba(100, 60, 20, 0.15);
+
+  /* Scrollbar */
+  --scrollbar-thumb: #D4B896;
+  --scrollbar-thumb-hover: #B89068;
+
+  /* Input */
+  --input-bg: #FFF2E6;
+
+  /* Panels */
+  --panel-bg: #FFFFFF;
+  --panel-border: #E8D5B8;
+
+  /* Map */
+  --map-bg: #F0E8D8;
+  --map-grid: #E0D0C0;
+  --map-country: #C8D8B8;
+  --map-stroke: #C0B0A0;
+
+  /* India flag accent colors */
+  --india-saffron: #FF9933;
+  --india-white: #FFFFFF;
+  --india-green: #138808;
+  --india-blue: #000080;
+  --india-saffron-dim: rgba(255, 153, 51, 0.7);
+  --india-green-dim: rgba(19, 136, 8, 0.7);
+
+  /* Semantic colors — darker for light mode */
+  --semantic-critical: #CC2222;
+  --semantic-high: #CC6600;
+  --semantic-elevated: #AA8800;
+  --semantic-normal: #116600;
+  --semantic-low: #2244CC;
+  --semantic-info: #2244CC;
+  --semantic-positive: #116600;
+
+  --threat-critical: #CC2222;
+  --threat-high: #CC6600;
+  --threat-medium: #AA8800;
+  --threat-low: #116600;
+  --threat-info: #2244CC;
+
+  --status-live: #CC6600;
+  --status-cached: #AA8800;
+  --status-unavailable: #CC2222;
+
+  --red: #CC2222;
+  --green: #116600;
+  --yellow: #CC6600;
+  --primary: #CC6600;
+  --muted: #8a6848;
+}
+
+/* ---- India-specific UI overrides ---- */
+
+/* Header accent stripe — India tricolor */
+:root[data-variant="india"] .header {
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(to right, var(--india-saffron) 33.33%, var(--india-white) 33.33%, var(--india-white) 66.66%, var(--india-green) 66.66%) 1;
+}
+
+/* Logo text with saffron color */
+:root[data-variant="india"] .logo {
+  background: linear-gradient(90deg, var(--india-saffron), #FFB84D);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Panel header accent */
+:root[data-variant="india"] .panel-header {
+  border-bottom-color: var(--india-saffron);
+  border-bottom-width: 1px;
+}
+
+/* Active variant indicator */
+:root[data-variant="india"] .variant-option.active {
+  color: var(--india-saffron);
+  border-color: var(--india-saffron);
+}
+
+/* Status dot — India orange */
+:root[data-variant="india"] .status-dot {
+  background: var(--india-saffron);
+  box-shadow: 0 0 6px var(--india-saffron);
+}
+
+/* War impact panel badge */
+:root[data-variant="india"] .india-war-badge {
+  background: color-mix(in srgb, var(--india-saffron) 15%, transparent);
+  border: 1px solid var(--india-saffron);
+  color: var(--india-saffron);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* India leader tweet card */
+:root[data-variant="india"] .leader-tweet-card {
+  border-left: 3px solid var(--india-saffron);
+  padding: 8px 10px;
+  margin-bottom: 8px;
+  background: color-mix(in srgb, var(--india-saffron) 5%, transparent);
+}
+
+:root[data-variant="india"] .leader-tweet-card .leader-name {
+  color: var(--india-saffron);
+  font-weight: 600;
+  font-size: 12px;
+}
+
+:root[data-variant="india"] .leader-tweet-card .leader-handle {
+  color: var(--text-dim);
+  font-size: 11px;
+}
+
+/* India market highlight */
+:root[data-variant="india"] .india-market-highlight {
+  border-left: 2px solid var(--india-green);
+  padding-left: 8px;
+}
+
+/* Skeleton adjustments for India theme */
+:root[data-variant="india"] .skeleton-shell {
+  background: #080c18;
+}
+
+:root[data-variant="india"] .skeleton-header {
+  background: #0d1224;
+  border-bottom-color: #1e2b48;
+}
+
+:root[data-variant="india"] .skeleton-dot {
+  background: #FF9933;
+}
+
+:root[data-variant="india"][data-theme="light"] .skeleton-shell {
+  background: #FFF8F0;
+}
+
+:root[data-variant="india"][data-theme="light"] .skeleton-header {
+  background: #FFFFFF;
+  border-bottom-color: #E8D5B8;
+}

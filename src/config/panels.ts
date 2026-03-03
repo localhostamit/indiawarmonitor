@@ -562,11 +562,93 @@ const HAPPY_MOBILE_MAP_LAYERS: MapLayers = {
 };
 
 // ============================================
+// INDIA VARIANT — Bharat Monitor
+// ============================================
+const INDIA_PANELS: Record<string, PanelConfig> = {
+  map: { name: 'India Region Map', enabled: true, priority: 1 },
+  'live-news': { name: 'India Live News', enabled: true, priority: 1 },
+  'live-webcams': { name: 'Live Cameras', enabled: true, priority: 1 },
+  insights: { name: 'AI Insights', enabled: true, priority: 1 },
+  india: { name: 'India News', enabled: true, priority: 1 },
+  leaders: { name: 'Indian Leaders', enabled: true, priority: 1 },
+  warimpact: { name: 'War Impact on India', enabled: true, priority: 1 },
+  indiabiz: { name: 'India Markets', enabled: true, priority: 1 },
+  diplomacy: { name: 'India Diplomacy', enabled: true, priority: 1 },
+  indiadefense: { name: 'India Defence', enabled: true, priority: 1 },
+  worldindia: { name: 'World & India', enabled: true, priority: 1 },
+  markets: { name: 'Global Markets', enabled: true, priority: 1 },
+  commodities: { name: 'Oil & Gold Prices', enabled: true, priority: 1 },
+  economic: { name: 'Economic Indicators', enabled: true, priority: 2 },
+  'strategic-risk': { name: 'Strategic Risk', enabled: true, priority: 2 },
+  cii: { name: 'Country Instability', enabled: true, priority: 2 },
+  'macro-signals': { name: 'Market Radar', enabled: true, priority: 2 },
+  monitors: { name: 'My Monitors', enabled: true, priority: 2 },
+  'world-clock': { name: 'World Clock', enabled: true, priority: 2 },
+};
+
+const INDIA_MAP_LAYERS: MapLayers = {
+  iranAttacks: false,
+  gpsJamming: false,
+  conflicts: true,
+  bases: true,
+  cables: false,
+  pipelines: true,
+  hotspots: true,
+  ais: false,
+  nuclear: true,
+  irradiators: false,
+  sanctions: true,
+  weather: true,
+  economic: true,
+  waterways: true,
+  outages: true,
+  cyberThreats: false,
+  datacenters: false,
+  protests: false,
+  flights: false,
+  military: true,
+  natural: true,
+  spaceports: false,
+  minerals: false,
+  fires: false,
+  ucdpEvents: false,
+  displacement: false,
+  climate: false,
+  startupHubs: false,
+  cloudRegions: false,
+  accelerators: false,
+  techHQs: false,
+  techEvents: false,
+  stockExchanges: false,
+  financialCenters: false,
+  centralBanks: false,
+  commodityHubs: false,
+  gulfInvestments: false,
+  positiveEvents: false,
+  kindness: false,
+  happiness: false,
+  speciesRecovery: false,
+  renewableInstallations: false,
+  tradeRoutes: false,
+  dayNight: false,
+};
+
+const INDIA_MOBILE_MAP_LAYERS: MapLayers = {
+  ...INDIA_MAP_LAYERS,
+  bases: false,
+  pipelines: false,
+  nuclear: false,
+  military: false,
+  waterways: false,
+  economic: false,
+};
+
+// ============================================
 // VARIANT-AWARE EXPORTS
 // ============================================
-export const DEFAULT_PANELS = SITE_VARIANT === 'happy' ? HAPPY_PANELS : SITE_VARIANT === 'tech' ? TECH_PANELS : SITE_VARIANT === 'finance' ? FINANCE_PANELS : FULL_PANELS;
-export const DEFAULT_MAP_LAYERS = SITE_VARIANT === 'happy' ? HAPPY_MAP_LAYERS : SITE_VARIANT === 'tech' ? TECH_MAP_LAYERS : SITE_VARIANT === 'finance' ? FINANCE_MAP_LAYERS : FULL_MAP_LAYERS;
-export const MOBILE_DEFAULT_MAP_LAYERS = SITE_VARIANT === 'happy' ? HAPPY_MOBILE_MAP_LAYERS : SITE_VARIANT === 'tech' ? TECH_MOBILE_MAP_LAYERS : SITE_VARIANT === 'finance' ? FINANCE_MOBILE_MAP_LAYERS : FULL_MOBILE_MAP_LAYERS;
+export const DEFAULT_PANELS = SITE_VARIANT === 'happy' ? HAPPY_PANELS : SITE_VARIANT === 'tech' ? TECH_PANELS : SITE_VARIANT === 'finance' ? FINANCE_PANELS : SITE_VARIANT === 'india' ? INDIA_PANELS : FULL_PANELS;
+export const DEFAULT_MAP_LAYERS = SITE_VARIANT === 'happy' ? HAPPY_MAP_LAYERS : SITE_VARIANT === 'tech' ? TECH_MAP_LAYERS : SITE_VARIANT === 'finance' ? FINANCE_MAP_LAYERS : SITE_VARIANT === 'india' ? INDIA_MAP_LAYERS : FULL_MAP_LAYERS;
+export const MOBILE_DEFAULT_MAP_LAYERS = SITE_VARIANT === 'happy' ? HAPPY_MOBILE_MAP_LAYERS : SITE_VARIANT === 'tech' ? TECH_MOBILE_MAP_LAYERS : SITE_VARIANT === 'finance' ? FINANCE_MOBILE_MAP_LAYERS : SITE_VARIANT === 'india' ? INDIA_MOBILE_MAP_LAYERS : FULL_MOBILE_MAP_LAYERS;
 
 /** Maps map-layer toggle keys to their data-freshness source IDs (single source of truth). */
 export const LAYER_TO_SOURCE: Partial<Record<keyof MapLayers, DataSourceId[]>> = {
